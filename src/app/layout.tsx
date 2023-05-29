@@ -1,7 +1,11 @@
+import { NavigationHeader } from '../components/navigation/NavigationHeader'
+import { AuthProvider } from '../contexts/AuthContext'
 import './globals.css'
-import { Inter } from 'next/font/google'
+import { Inter, Nunito } from 'next/font/google'
+
 
 const inter = Inter({ subsets: ['latin'] })
+const adventPro = Nunito({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'CT Jam',
@@ -15,12 +19,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className + ' flex min-h-screen flex-col items-center justify-between p-4'}>
-        <header>
-          <h1>CT Jam</h1>
-          <h2>App para formar uma jam real, com a qualidade de um grande show</h2>
-        </header>
-        {children}
+      <body className={adventPro.className + ' bg-grayBg text-black flex min-h-full h-full flex-col items-center justify-start'}>
+        <AuthProvider>
+          <NavigationHeader />
+          {children}
+          <footer>
+            ### MENU
+          </footer> 
+        </AuthProvider>
       </body>
     </html>
   )
