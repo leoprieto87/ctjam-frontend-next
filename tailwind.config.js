@@ -14,12 +14,14 @@ module.exports = {
         grayText: '#404040',
         grayBg: '#dadada',
         redJam: '#C62E31',
-        redJam: '#C62E31',
-        blueActions: '#2D4A95'
+        blueActions: '#2D4A95',
       },
       backgroundImage: {
         // 'logo': "url('http://www.ctjam.kinghost.net/images/logo-ctjam.png')",
-        'heroBanner': "url('http://www.ctjam.kinghost.net/images/bgCtJamApp.jpg')",
+        heroBanner:
+          "url('http://www.ctjam.kinghost.net/images/bgCtJamApp.jpg')",
+        'gradient-linear':
+          'linear-gradient(180deg, rgba(218,218,218,1) 20%, rgba(255,255,255,1) 100%)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
