@@ -1,47 +1,36 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { useAuth } from '../../../contexts/AuthContext'
 import { LoadingModal } from '../../../components/loading/LoadingModal'
-import { getJamById } from '../services/getJamById'
 import { JamDataType } from '../../../components/cardsJams/CardJams'
 import {
   CardPlayList,
   PlayListType,
 } from '../../../components/cardsJams/CardPlayList'
+import { ModalPickSong } from '../../../components/modal/ModalPickSong'
 
-export function Choice(jamId: { _id: string }) {
-  console.log('jamId', jamId)
-  const { userLogged } = useAuth()
+export function Choice(jamData: { currentJam: JamDataType }) {
   const [isLoading, setLoading] = useState(false)
-  const [jamData, setJamData] = useState<JamDataType>()
-
-  async function getJam() {
-    try {
-      const jamDataResponse = await getJamById(jamId._id)
-      setJamData(jamDataResponse)
-    } catch (error) {
-      console.log('erro ao ')
-    }
-  }
+  const [playList, setPlayList] = useState<PlayListType[] | undefined>([])
 
   useEffect(() => {
-    getJam()
-    setTimeout(() => {
-      console.log(jamData?.playList)
-    }, 2000)
+    setPlayList(jamData.currentJam.playList)
   }, [])
 
   return (
-    <div className="flex flex-col">
-      <h1>TESTE</h1>
-      {jamData?.playList.map((playList: PlayListType) => (
-        <CardPlayList
-          _id={''}
-          usersBand={playList.usersBand}
-          artist={playList.artist}
-          song={playList.song}
-        />
-      ))}
+    <div className="flex flex-col mt-6">
+      <ul>
+        {playList?.map((song: PlayListType) => (
+          <li key={song._id}>
+            <a>
+              <CardPlayList
+                usersBand={song.usersBand}
+                artistName={song.artistName}
+                songName={song.songName}
+              />
+            </a>
+          </li>
+        ))}
+      </ul>
       {isLoading && <LoadingModal />}
     </div>
   )

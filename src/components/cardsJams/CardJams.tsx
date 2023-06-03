@@ -12,30 +12,17 @@ export interface JamDataType {
   image: string
   playList: [
     {
-      _id: Key | null | undefined
+      _id: string
       usersBand: {
-        vocal: {
-          id: string
-        }
-        guitar: {
-          id: string
-        }
-        guitar2: {
-          id: string
-        }
-        bass: {
-          id: string
-        }
-        drums: {
-          id: string
-        }
-        keys: {
-          id: string
-        }
+        vocal: string
+        guitar: string
+        guitar2: string
+        bass: string
+        drums: string
+        keys: string
       }
-
-      artist: string
-      song: string
+      artistName: string
+      songName: string
     },
   ]
   urlPlayList: string

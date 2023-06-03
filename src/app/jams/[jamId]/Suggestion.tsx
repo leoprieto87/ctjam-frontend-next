@@ -19,8 +19,8 @@ export function Suggestion(jamId: { _id: string }) {
       drums: null,
       keys: null,
     },
-    artist: null,
-    song: null,
+    artistName: null,
+    songName: null,
   })
 
   const handleChange = (e: any) => {
@@ -47,8 +47,8 @@ export function Suggestion(jamId: { _id: string }) {
         [instrument]: userLogged?._id,
       },
     }))
-    newSong.artist = artist
-    newSong.song = song
+    newSong.artistName = artist
+    newSong.songName = song
     sendNewSongToJamIdInDataBate()
   }
 
@@ -100,10 +100,10 @@ export function Suggestion(jamId: { _id: string }) {
                 autoComplete="artist"
                 placeholder="Bob Marley"
                 required
-                className="peer block min-h-[auto] w-full text-sm rounded-xl border-grayText border bg-transparent px-3 py-[0.28rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 border-grayText data-[te-input-state-active]:placeholder:border-grayText opacity-100 motion-reduce:transition-none dark:text-grayText dark:placeholder:text-grayText border-grayText [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50 text-sm border-slate-300"
+                className="peer block min-h-[auto] w-full text-sm rounded-xl border-grayText border px-3 py-[0.28rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 border-grayText data-[te-input-state-active]:placeholder:border-grayText opacity-100 motion-reduce:transition-none dark:text-grayText dark:placeholder:text-grayText border-grayText [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50 text-sm border-slate-300"
               ></input>
             </label>
-            <label>
+            <label className="mb-6">
               Música:
               <input
                 id="song"
@@ -111,7 +111,7 @@ export function Suggestion(jamId: { _id: string }) {
                 autoComplete="song"
                 placeholder="Is this love"
                 required
-                className="peer block min-h-[auto] w-full text-sm rounded-xl border-grayText border bg-transparent px-3 py-[0.28rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 border-grayText data-[te-input-state-active]:placeholder:border-grayText opacity-100 motion-reduce:transition-none dark:text-grayText dark:placeholder:text-grayText border-grayText [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50 text-sm border-slate-300"
+                className="peer block min-h-[auto] w-full text-sm rounded-xl border-grayText border px-3 py-[0.28rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 border-grayText data-[te-input-state-active]:placeholder:border-grayText opacity-100 motion-reduce:transition-none dark:text-grayText dark:placeholder:text-grayText border-grayText [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50 text-sm border-slate-300"
               ></input>
             </label>
 
@@ -119,7 +119,7 @@ export function Suggestion(jamId: { _id: string }) {
               id="usersBand"
               name="usersBand"
               onChange={handleChange}
-              className="peer p-3 block min-h-[auto] w-full text-sm rounded-xl border-grayText border bg-transparent py-2 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 border-grayText data-[te-input-state-active]:placeholder:border-grayText opacity-100 motion-reduce:transition-none dark:text-grayText dark:placeholder:text-grayText border-grayText [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50 text-sm border-slate-300 mt-6 mb-6"
+              className="peer p-3 block min-h-[auto] w-full text-sm rounded-xl border-grayText border py-2 leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 border-grayText data-[te-input-state-active]:placeholder:border-grayText opacity-100 motion-reduce:transition-none dark:text-grayText dark:placeholder:text-grayText border-grayText [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50 text-sm border-slate-300 mt-6 mb-6"
             >
               <option>Escolha o instrumento</option>
               <option id="vocal" value="vocal">

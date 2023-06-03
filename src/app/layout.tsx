@@ -23,7 +23,7 @@ export default function RootLayout({
       <body
         className={
           adventPro.className +
-          ' bg-gradient-linear text-black bg-no-repeat flex min-h-full h-full flex-col items-center justify-start'
+          ' bg-grayBg text-black bg-no-repeat flex min-h-full h-full flex-col items-center justify-start'
         }
       >
         <AuthProvider>

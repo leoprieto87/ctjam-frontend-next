@@ -33,7 +33,7 @@ export default function JamDetailPage({
   }, [params.jamId])
 
   return (
-    <main className="flex min-h-full flex-col items-center text-center justify-start p-4">
+    <main className="flex h-full flex-col items-center text-center justify-start p-4">
       <h1 className="text-3xl">{jamData?.name}</h1>
       <h2 className="text-base pt-2">{jamData?.description}</h2>
       {jamData?.step === 'suggestion' ? (
@@ -48,7 +48,7 @@ export default function JamDetailPage({
           <h3 className="text-2xl text-blueActions">
             Escolha uma musica do repertório!
           </h3>
-          <Choice _id={jamData?._id} />
+          {jamData && <Choice currentJam={jamData} />}
         </div>
       )}
       {isLoading && <LoadingModal />}
