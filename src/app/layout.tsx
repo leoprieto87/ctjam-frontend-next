@@ -1,31 +1,35 @@
 import { NavigationHeader } from '../components/navigation/NavigationHeader'
+import { NavigationMenu } from '../components/navigation/NavigationMenu'
 import { AuthProvider } from '../contexts/AuthContext'
 import './globals.css'
-import { Inter, Nunito } from 'next/font/google'
+import { Nunito } from 'next/font/google'
 
-
-const inter = Inter({ subsets: ['latin'] })
 const adventPro = Nunito({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'CT Jam',
-  description: 'App para formar uma jam real, com a qualidade de um grande show',
+  description:
+    'App para formar uma jam real, com a qualidade de um grande show',
 }
 
 export default function RootLayout({
   children,
 }: {
+  // eslint-disable-next-line no-undef
   children: React.ReactNode
 }) {
   return (
     <html lang="en">
-      <body className={adventPro.className + ' bg-grayBg text-black flex min-h-full h-full flex-col items-center justify-start'}>
+      <body
+        className={
+          adventPro.className +
+          ' bg-grayBg text-black bg-no-repeat flex min-h-full h-full flex-col items-center justify-start'
+        }
+      >
         <AuthProvider>
           <NavigationHeader />
           {children}
-          <footer>
-            ### MENU
-          </footer> 
+          <NavigationMenu />
         </AuthProvider>
       </body>
     </html>
