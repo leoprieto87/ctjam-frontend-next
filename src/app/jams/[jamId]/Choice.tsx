@@ -1,16 +1,15 @@
 'use client'
 import React, { useEffect, useState } from 'react'
-import { LoadingModal } from '../../../components/loading/LoadingModal'
+// import { LoadingModal } from '../../../components/loading/LoadingModal'
 import { JamDataType } from '../../../components/cardsJams/CardJams'
 import {
   CardPlayList,
   PlayListType,
 } from '../../../components/cardsJams/CardPlayList'
-import { ModalPickSong } from '../../../components/modal/ModalPickSong'
 
 export function Choice(jamData: { currentJam: JamDataType }) {
-  const [isLoading, setLoading] = useState(false)
-  const [playList, setPlayList] = useState<PlayListType[] | undefined>([])
+  // const [isLoading, setLoading] = useState(false)
+  const [playList, setPlayList] = useState<any>()
 
   useEffect(() => {
     setPlayList(jamData.currentJam.playList)
@@ -31,7 +30,7 @@ export function Choice(jamData: { currentJam: JamDataType }) {
           </li>
         ))}
       </ul>
-      {isLoading && <LoadingModal />}
+      {/* {isLoading && <LoadingModal />} */}
     </div>
   )
 }

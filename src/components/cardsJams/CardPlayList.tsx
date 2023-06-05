@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { useAuth } from '../../contexts/AuthContext'
+import { ButtonDefault } from '../buttons/ButtonDefaut'
+// import { useAuth } from '../../contexts/AuthContext'
 
 /* eslint-disable @next/next/no-img-element */
 export interface PlayListType {
@@ -40,7 +41,7 @@ const inputClasses =
 export function CardPlayList(playList: PlayListType) {
   // const { userLogged } = useAuth()
   const [showMore, setShowmore] = useState(false)
-  console.log('playList', playList.usersBand.vocal)
+  console.log('playList', playList)
   function handleShowUsersBand() {
     if (showMore) {
       setShowmore(false)
@@ -186,7 +187,7 @@ export function CardPlayList(playList: PlayListType) {
                       }`}
                     ></input>
                   </label>
-                  <label className="flex flex-col">
+                  <label className="flex flex-col mb-6">
                     Teclado:
                     <input
                       id="song"
@@ -201,6 +202,7 @@ export function CardPlayList(playList: PlayListType) {
                       }`}
                     ></input>
                   </label>
+                  <ButtonDefault text={'Escolher música'} />
                 </form>
               </div>
             </div>

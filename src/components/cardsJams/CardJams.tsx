@@ -6,28 +6,22 @@ export interface JamDataType {
   _id: string
   data: string
   name: string
-  theme: string
-  address: string
   description: string
   image: string
-  playList: [
-    {
-      _id: string
-      usersBand: {
-        vocal: string
-        guitar: string
-        guitar2: string
-        bass: string
-        drums: string
-        keys: string
-      }
-      artistName: string
-      songName: string
-    },
-  ]
-  urlPlayList: string
   isActive: boolean
-  step: string
+  playList: {
+    _id: string
+    usersBand: {
+      vocal: string
+      guitar: string
+      guitar2: string
+      bass: string
+      drums: string
+      keys: string
+    }
+    artistName: string
+    songName: string
+  }
 }
 
 export function CardJams(jamData: JamDataType) {

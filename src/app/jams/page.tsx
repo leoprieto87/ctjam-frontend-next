@@ -39,9 +39,7 @@ export default function Jams() {
                 description={jamData.description}
                 image={jamData.image}
                 isActive={jamData.isActive}
-                theme={''}
-                address={''}
-                urlPlayList={''}
+                playList={jamData.playList}
               />
             </li>
           </ul>
