@@ -5,7 +5,6 @@ import {
   ButtonRegister,
   ButtonSignIn,
 } from '../components/buttons/ButtonsSignIn'
-import { useEffect } from 'react'
 import { LogoJam } from '../components/logoJam/LogoJam'
 import { useAuth } from '../contexts/AuthContext'
 
@@ -19,10 +18,6 @@ export default function Home() {
         : userLogged?.nickname
       : ''
 
-  useEffect(() => {
-    // console.log('userLogged', userLogged)
-  }, [userLogged])
-
   return (
     <main
       className="
@@ -31,6 +26,8 @@ export default function Home() {
       bg-cover 
       flex 
       min-h-full 
+      h-full 
+      w-full 
       flex-col 
       items-center 
       content-center 
@@ -55,9 +52,6 @@ export default function Home() {
           </>
         ) : (
           <>
-            <h1 className="text-4xl text-white pt-6 font-semibold drop-shadow">
-              PRONTO PARA A GIG?
-            </h1>
             <h2 className="text-2xl text-black pt-3 py-3">
               App para formar uma jam real, com a qualidade de um grande show!
             </h2>

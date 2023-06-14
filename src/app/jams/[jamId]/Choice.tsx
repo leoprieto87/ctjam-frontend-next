@@ -1,18 +1,20 @@
 'use client'
+
 import React, { useEffect, useState } from 'react'
-// import { LoadingModal } from '../../../components/loading/LoadingModal'
 import { JamDataType } from '../../../components/cardsJams/CardJams'
 import {
   CardPlayList,
   PlayListType,
 } from '../../../components/cardsJams/CardPlayList'
 
-export function Choice(jamData: { currentJam: JamDataType }) {
-  // const [isLoading, setLoading] = useState(false)
+export function Choice(jamData: {
+  currentJam: JamDataType
+}): React.JSX.Element {
   const [playList, setPlayList] = useState<any>()
 
   useEffect(() => {
     setPlayList(jamData.currentJam.playList)
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -25,12 +27,13 @@ export function Choice(jamData: { currentJam: JamDataType }) {
                 usersBand={song.usersBand}
                 artistName={song.artistName}
                 songName={song.songName}
+                _id={song._id}
+                jamId={jamData.currentJam._id}
               />
             </a>
           </li>
         ))}
       </ul>
-      {/* {isLoading && <LoadingModal />} */}
     </div>
   )
 }

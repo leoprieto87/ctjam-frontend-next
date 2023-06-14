@@ -13,6 +13,7 @@ module.exports = {
         gray: '#303030',
         grayText: '#404040',
         grayBg: '#dadada',
+        graySelect: '#757575',
         redJam: '#C62E31',
         blueActions: '#2D4A95',
       },

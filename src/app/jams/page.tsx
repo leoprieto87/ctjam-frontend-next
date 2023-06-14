@@ -40,6 +40,7 @@ export default function Jams() {
                 image={jamData.image}
                 isActive={jamData.isActive}
                 playList={jamData.playList}
+                step={''}
               />
             </li>
           </ul>

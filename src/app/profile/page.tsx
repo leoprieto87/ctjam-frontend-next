@@ -1,12 +1,10 @@
 'use client'
-import { useEffect, useState } from 'react'
-import api from '../../contexts/_api'
-import { LoadingModal } from '../../components/loading/LoadingModal'
-import { CardJams, JamDataType } from '../../components/cardsJams/CardJams'
+// import { useState } from 'react'
+// import { LoadingModal } from '../../components/loading/LoadingModal'
 import { useAuth } from '../../contexts/AuthContext'
 
 export default function Profile() {
-  const [isLoading, setLoading] = useState(false)
+  // const [isLoading, setLoading] = useState(false)
   const { userLogged } = useAuth()
   const userName =
     typeof window !== 'undefined'
@@ -14,25 +12,10 @@ export default function Profile() {
         ? userLogged.name
         : userLogged?.nickname
       : ''
-  //   const [jams, setJams] = useState<JamDataType[]>([]) // Ajuste da tipagem para um array de JamDataType
-
-  //   const getJams = async () => {
-  //     setLoading(true)
-  //     try {
-  //       const response = await api.get('/jams')
-  //       setJams(response.data)
-  //       setLoading(false)
-  //     } catch (error) {
-  //       console.error('Erro ao buscar os dados:', error)
-  //     }
-  //   }
-
-  //   useEffect(() => {
-  //     getJams()
-  //   }, []) // Removido 'jams' das dependências para evitar o loop de renderização
 
   return (
     <main className="flex min-h-full flex-col items-center text-center justify-start p-4">
+      {/*  eslint-disable-next-line @next/next/no-img-element */}
       <img
         width={150}
         height={150}
@@ -143,7 +126,7 @@ export default function Profile() {
           </label>
         </li>
       </ul>
-      {isLoading && <LoadingModal />}
+      {/* {isLoading && <LoadingModal />} */}
     </main>
   )
 }

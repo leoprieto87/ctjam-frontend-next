@@ -1,6 +1,6 @@
 import Link from 'next/link'
 
-const patternButton = 'my-2 py-3 px-6 rounded-xl text-center w-full'
+const patternButton = 'my-2 py-3 px-6 rounded-lg text-center w-full'
 
 export function ButtonRegister() {
   return (

@@ -1,6 +1,5 @@
 'use client'
 
-import { useState } from 'react'
 import { useAuth } from '../../contexts/AuthContext'
 import Link from 'next/link'
 
@@ -13,7 +12,7 @@ export function NavigationMenu() {
   return (
     <>
       {userLogged ? (
-        <div className="fixed bottom-0 left-0 z-20 w-full bg-white h-16 dark:bg-gray-800 border-t border-slate-600 dark:bg-gray-700 dark:border-slate-600">
+        <div className="fixed end-0 bottom-0 left-0 z-20 w-full bg-white h-16 dark:bg-gray-800 border-t border-slate-600 dark:bg-gray-700 dark:border-slate-600">
           <div className="grid h-full max-w-lg grid-cols-2 mx-auto font-medium bg-gray-800">
             <button
               type="button"
@@ -41,6 +40,7 @@ export function NavigationMenu() {
                   </>
                 ) : (
                   <>
+                    {/* eslint-disable-next-line @next/next/no-img-element */}
                     <img
                       width={24}
                       height={24}

@@ -1,27 +1,20 @@
 'use client'
 import { useForm } from 'react-hook-form'
 import { useAuth } from '../../contexts/AuthContext'
-import { useEffect } from 'react'
 import { LoadingModal } from '../../components/loading/LoadingModal'
 import { ButtonDefault } from '../../components/buttons/ButtonDefaut'
 
 export default function SignIn() {
-  interface SignInData {
-    email: string
-    password: string
-  }
-  const { userLogged, isLoading, authLogin } = useAuth()
-  const { register, handleSubmit } = useForm<SignInData>()
+  const { isLoading, authLogin } = useAuth()
+  const { register, handleSubmit } = useForm()
 
-  const handleLogin = async (data: SignInData) => {
+  const handleLogin = async (data: any) => {
     const userDataRequest = {
       email: data.email,
       password: data.password,
     }
     await authLogin(userDataRequest)
   }
-
-  useEffect(() => {}, [isLoading, userLogged])
 
   return (
     <main className="flex min-h-full flex-col items-center text-center justify-start p-4">
@@ -62,7 +55,6 @@ export default function SignIn() {
           ></input>
         </div>
         <ButtonDefault text={'Entrar'} />
-        {/* <button type="submit">Entrar</button> */}
       </form>
       {isLoading ? <LoadingModal /> : null}
     </main>

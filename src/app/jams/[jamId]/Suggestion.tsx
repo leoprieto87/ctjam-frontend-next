@@ -60,7 +60,7 @@ export function Suggestion(jamId: { _id: string }) {
 
       try {
         const sendUpdateJamToData = await api.put(
-          `/jams/update-playlist/${jamId._id}`,
+          `/jams/addSongToJamPlayList/${jamId._id}`,
           newSong,
         )
         console.log('nova musica incluida', sendUpdateJamToData)
@@ -72,8 +72,6 @@ export function Suggestion(jamId: { _id: string }) {
     } finally {
       setSuggested(true)
       setLoading(false)
-      setTimeout(() => {}, 3000)
-      // console.log('baixou a jam atualizada')
     }
   }
 

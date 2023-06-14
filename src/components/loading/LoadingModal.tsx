@@ -1,6 +1,6 @@
 export function LoadingModal() {
   return (
-    <div className="fixed top-0 left-0 bg-white bg-opacity-80 z-10 h-full w-full flex items-center justify-center">
+    <div className="fixed top-0 left-0 bg-white bg-opacity-80 z-30 h-full w-full flex items-center justify-center">
       <div className="flex items-center flex-col justify-between">
         <span className="text-xl mr-4">carregando</span>
         <svg

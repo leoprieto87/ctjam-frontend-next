@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@heroicons/react": "^2.0.18",
+    "@hookform/resolvers": "^3.1.1",
     "@types/axios": "^0.14.0",
     "@types/dotenv": "^8.2.0",
     "@types/node": "20.2.1",
@@ -26,7 +27,8 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.44.1",
     "tailwindcss": "3.3.2",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "zod": "^3.21.4"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.2.0"
