@@ -30,31 +30,32 @@ export interface JamDataType {
 export function CardJams(jamData: JamDataType) {
   return (
     <div
-      className={`flex flex-col overflow-hidden ${
+      className={`flex flex-col overflow-hidden rounded-lg max-h-38 drop-shadow-lg ${
         !jamData.isActive ? 'opacity-30 grayscale' : 'opacity-100'
       }`}
     >
       <Link
-        href={`/jams/${jamData._id}`}
-        className="overflow-hidden flex flex-row items-center bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+        id="jam"
+        href={jamData.isActive ? `/jams/${jamData._id}` : '/jams'}
+        className="overflow-hidden max-h-38 flex flex-row items-center bg-white md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
       >
         <img
-          className="object-cover"
+          className="object-cover rounded-lg"
           width={100}
           height={100}
           src={jamData.image}
           alt={jamData.name}
         />
 
-        <div className="flex flex-row align-center">
-          <h5 className="text-base font-bold text-gray-900 p-2">
-            {jamData.name}
-          </h5>
-          <p className="mb-1 font-normal text-gray-700 dark:text-gray-400 ">
-            {jamData.description.slice(0, 60)}
-            {jamData.description.length > 60 ? '...' : ''}
+        <div className="flex flex-col align-center text-left px-2">
+          <h5 className="text-lg font-bold text-gray-900">{jamData.name}</h5>
+          <p className="mb-1 text-sm font-normal text-gray-700 dark:text-gray-400 ">
+            {jamData.description.slice(0, 40)}
+            {jamData.description.length > 40 ? '...' : ''}
           </p>
-          <p className="mb-1 font-normal text-gray-700 dark:text-gray-400">
+        </div>
+        <div className="h-full bg-graySelect rounded-lg">
+          <p className="font-normal text-gray-700 dark:text-gray-400 p-2">
             {jamData.data}
           </p>
         </div>

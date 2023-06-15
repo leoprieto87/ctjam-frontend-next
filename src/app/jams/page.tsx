@@ -26,12 +26,12 @@ export default function Jams() {
   return (
     <main className="flex min-h-full flex-col items-center text-center justify-start p-4">
       <h2 className="text-2xl">Escolha qual jam você quer participar.</h2>
-      {jams.map(
-        (
-          jamData, // Removido o uso do index como chave e corrigido o map
-        ) => (
-          <ul key={jamData._id}>
-            <li className="p-3">
+      <ul className="pt-4 flex-col">
+        {jams.map(
+          (
+            jamData, // Removido o uso do index como chave e corrigido o map
+          ) => (
+            <li key={jamData._id} className="mb-4">
               <CardJams
                 _id={jamData._id}
                 data={jamData.data}
@@ -43,9 +43,9 @@ export default function Jams() {
                 step={''}
               />
             </li>
-          </ul>
-        ),
-      )}
+          ),
+        )}
+      </ul>
       {isLoading && <LoadingModal />}
     </main>
   )

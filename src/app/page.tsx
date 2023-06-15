@@ -23,7 +23,8 @@ export default function Home() {
       className="
       bg-heroBanner 
       bg-no-repeat 
-      bg-cover 
+      bg-contain
+      bg-white 
       flex 
       min-h-full 
       h-full 
@@ -41,20 +42,20 @@ export default function Home() {
 
         {userLogged ? (
           <>
-            <h1 className="text-4xl text-white pt-6 font-semibold drop-shadow">
+            <h1 className="text-4xl text-white pt-8 font-semibold drop-shadow">
               Olá {userName}, tudo bem?{' '}
             </h1>
 
-            <h2 className="text-2xl text-black pt-3 py-3">
+            <h2 className="text-2xl text-black pt-3 py-3 mb-6">
               Encontre uma JAM e se prepare para o show!
             </h2>
             <ButtonGoToJam />
           </>
         ) : (
           <>
-            <h2 className="text-2xl text-black pt-3 py-3">
+            <h1 className="text-4xl text-gray pt-8 font-semibold mt-6 mb-6">
               App para formar uma jam real, com a qualidade de um grande show!
-            </h2>
+            </h1>
             <ButtonRegister />
             <ButtonSignIn />
           </>
