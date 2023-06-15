@@ -3,7 +3,7 @@ import { useForm } from 'react-hook-form'
 import { useAuth } from '../../contexts/AuthContext'
 import { LoadingModal } from '../../components/loading/LoadingModal'
 import { ButtonDefault } from '../../components/buttons/ButtonDefaut'
-import { inputClass, labelClass } from '../register/page'
+import { inputClass, labelClass } from '../../components/input/inputClass'
 
 export default function SignIn() {
   const { isLoading, authLogin } = useAuth()
