@@ -67,7 +67,7 @@ export const AuthProvider = ({ children }: Props) => {
         const config = {
           method: 'post',
           maxBodyLength: Infinity,
-          url: `https://ctjam.com.br/users/login/authUser/${userId}`,
+          url: `http://ctjam.nodejsng10f06.kinghost.net:21041/users/login/authUser/${userId}`,
           headers: {
             Authorization: `Bearer ${token}`,
           },
