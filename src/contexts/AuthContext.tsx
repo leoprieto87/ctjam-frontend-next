@@ -60,14 +60,12 @@ export const AuthProvider = ({ children }: Props) => {
 
       const token = responseToken.data.token
       const userId = responseToken.data.userId
-      console.log('token', token)
-      console.log('userId', token)
       // VALIDA O TOKEN E RETORNA DADOS DO USUÁRIO LOGADO
       try {
         const config = {
           method: 'post',
           maxBodyLength: Infinity,
-          url: `http://ctjam.nodejsng10f06.kinghost.net:21041/users/login/authUser/${userId}`,
+          url: `http://localhost:21041/users/login/authUser/${userId}`,
           headers: {
             Authorization: `Bearer ${token}`,
           },

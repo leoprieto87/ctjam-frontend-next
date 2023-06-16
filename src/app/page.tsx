@@ -40,7 +40,15 @@ export default function Home() {
       <section className="flex min-h-full flex-col items-center text-center">
         <LogoJam className={'w-32'} />
 
-        {userLogged ? (
+        {!userLogged ? (
+          <>
+            <h1 className="text-4xl text-gray pt-8 font-semibold mt-6 mb-6">
+              App para formar uma jam real, com a qualidade de um grande show!
+            </h1>
+            <ButtonRegister />
+            <ButtonSignIn />
+          </>
+        ) : (
           <>
             <h1 className="text-4xl text-white pt-8 font-semibold drop-shadow">
               Olá {userName}, tudo bem?{' '}
@@ -50,14 +58,6 @@ export default function Home() {
               Encontre uma JAM e se prepare para o show!
             </h2>
             <ButtonGoToJam />
-          </>
-        ) : (
-          <>
-            <h1 className="text-4xl text-gray pt-8 font-semibold mt-6 mb-6">
-              App para formar uma jam real, com a qualidade de um grande show!
-            </h1>
-            <ButtonRegister />
-            <ButtonSignIn />
           </>
         )}
       </section>
