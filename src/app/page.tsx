@@ -13,9 +13,9 @@ export default function Home() {
 
   const userName =
     typeof window !== 'undefined'
-      ? userLogged?.nickname === '' || userLogged?.nickname === null
+      ? userLogged?.nickName === '' || userLogged?.nickName === null
         ? userLogged.name
-        : userLogged?.nickname
+        : userLogged?.nickName
       : ''
 
   return (
@@ -39,7 +39,6 @@ export default function Home() {
     >
       <section className="flex min-h-full flex-col items-center text-center">
         <LogoJam className={'w-32'} />
-
         {!userLogged ? (
           <>
             <h1 className="text-4xl text-gray pt-8 font-semibold mt-6 mb-6">

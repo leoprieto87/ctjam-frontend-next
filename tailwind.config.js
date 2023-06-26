@@ -19,8 +19,7 @@ module.exports = {
       },
       backgroundImage: {
         // 'logo': "url('http://www.ctjam.kinghost.net/images/logo-ctjam.png')",
-        heroBanner:
-          "url('http://ctjam.nodejsng10f06.kinghost.net/images/bgCtJamApp.jpg')",
+        heroBanner: "url('https://ctjam.com.br/images/bgCtJamApp.jpg')",
         'gradient-linear':
           'linear-gradient(180deg, rgba(218,218,218,1) 80%, rgba(255,255,255,1) 100%)',
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

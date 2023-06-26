@@ -8,7 +8,7 @@ export const LogoJam: React.FC<CustomImageProps> = ({ className }) => {
     // eslint-disable-next-line @next/next/no-img-element
     <img
       className={className}
-      src="http://ctjam.nodejsng10f06.kinghost.net/images/logo-ctjam.png"
+      src="https://ctjam.com.br/images/logo-ctjam.png"
       alt="Logo Ct Jam"
     />
   )

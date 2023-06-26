@@ -22,7 +22,7 @@ interface User {
   isAdm: boolean
   leftHanded: boolean
   musicStyle: string
-  nickname: string
+  nickName: string
   phone: string
   // Outras propriedades do usuário
 }
@@ -65,7 +65,7 @@ export const AuthProvider = ({ children }: Props) => {
         const config = {
           method: 'post',
           maxBodyLength: Infinity,
-          url: `http://localhost:21041/users/login/authUser/${userId}`,
+          url: `http://ctjam.com.br:21097/users/login/authUser/${userId}`,
           headers: {
             Authorization: `Bearer ${token}`,
           },

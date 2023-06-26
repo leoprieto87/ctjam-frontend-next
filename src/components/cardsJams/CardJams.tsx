@@ -47,14 +47,14 @@ export function CardJams(jamData: JamDataType) {
           alt={jamData.name}
         />
 
-        <div className="flex flex-col align-center text-left px-2">
+        <div className="flex flex-col align-center text-left px-2 grow">
           <h5 className="text-lg font-bold text-gray-900">{jamData.name}</h5>
           <p className="mb-1 text-sm font-normal text-gray-700 dark:text-gray-400 ">
             {jamData.description.slice(0, 40)}
             {jamData.description.length > 40 ? '...' : ''}
           </p>
         </div>
-        <div className="h-full bg-graySelect rounded-lg">
+        <div className="h-full max-w-xs bg-graySelect rounded-lg">
           <p className="font-normal text-gray-700 dark:text-gray-400 p-2">
             {jamData.data}
           </p>

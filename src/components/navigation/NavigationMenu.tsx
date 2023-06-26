@@ -45,6 +45,7 @@ export function NavigationMenu() {
                       width={24}
                       height={24}
                       src={userLogged.image}
+                      // src={userLogged.image}
                       alt="Foto do perfil"
                       className="rounded-full"
                     />
