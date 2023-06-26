@@ -91,7 +91,7 @@ export default function Profile() {
               id="artist"
               name="artist"
               autoComplete="artist"
-              value={userLogged?.nickname}
+              value={userLogged?.nickName}
               required
               className="peer block min-h-[auto] w-full text-sm rounded-xl border-grayText border bg-transparent px-3 py-[0.28rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 border-grayText data-[te-input-state-active]:placeholder:border-grayText opacity-100 motion-reduce:transition-none dark:text-grayText dark:placeholder:text-grayText border-grayText [&:not([data-te-input-placeholder-active])]:placeholder:opacity-50 text-sm border-slate-300"
             ></input>
