@@ -8,9 +8,9 @@ export default function Profile() {
   const { userLogged } = useAuth()
   const userName =
     typeof window !== 'undefined'
-      ? userLogged?.nickname === '' || userLogged?.nickname === null
+      ? userLogged?.nickName === '' || userLogged?.nickName === null
         ? userLogged.name
-        : userLogged?.nickname
+        : userLogged?.nickName
       : ''
 
   return (
