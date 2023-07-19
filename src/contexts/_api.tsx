@@ -1,7 +1,7 @@
 import axios from 'axios'
 
 const api = axios.create({
-  baseURL: 'http://ctjam.com.br:21062',
+  baseURL: 'https://ctjam.com.br/api',
 })
 
 export default api
