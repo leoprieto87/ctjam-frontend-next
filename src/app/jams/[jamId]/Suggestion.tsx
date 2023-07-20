@@ -60,7 +60,7 @@ export function Suggestion(jamId: { _id: string }) {
 
       try {
         const sendUpdateJamToData = await api.put(
-          `/jams/update/playlist/${jamId._id}`,
+          `/jams/addSongToJamPlayList/${jamId._id}`,
           newSong,
         )
         console.log('nova musica incluida', sendUpdateJamToData)
