@@ -9,14 +9,18 @@ export function NavigationMenu() {
   // const routerPathName = usePathname()
   const { userLogged } = useAuth()
 
+  const gridNavNumber = userLogged?.isAdm ? 'grid-cols-3' : 'grid-cols-2'
+
   return (
     <>
       {userLogged ? (
         <div className="fixed end-0 bottom-0 left-0 z-20 w-full bg-white h-16 dark:bg-gray-800 border-t border-slate-600 dark:bg-gray-700 dark:border-slate-600">
-          <div className="grid h-full max-w-lg grid-cols-2 mx-auto font-medium bg-gray-800">
+          <div
+            className={`grid ${gridNavNumber} h-full max-w-lg mx-auto font-medium bg-gray-800`}
+          >
             <button
               type="button"
-              className=" bg-gray-800 inline-flex flex-col items-center justify-center px-5 border-r border-slate-600 hover:bg-gray-200 dark:hover:bg-gray-800 group dark:border-slate-600"
+              className="bg-gray-800 inline-flex flex-col items-center justify-center px-5 border-r border-slate-600 hover:bg-gray-200 dark:hover:bg-gray-800 group dark:border-slate-600"
             >
               <Link
                 href={'/profile'}
@@ -79,28 +83,36 @@ export function NavigationMenu() {
                 Minhas jams
               </span>
             </button>
-            {/* <button
-          type="button"
-          className="inline-flex flex-col items-center justify-center px-5 border-slate-600 hover:bg-gray-50 dark:hover:bg-gray-800 group border-l dark:border-slate-600"
-        >
-          <svg
-            className="w-6 h-6 mb-1 text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500"
-            fill="currentColor"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
-            aria-hidden="true"
-          >
-            <path d="M4 4a2 2 0 00-2 2v1h16V6a2 2 0 00-2-2H4z"></path>
-            <path
-              clipRule="evenodd"
-              fillRule="evenodd"
-              d="M18 9H2v5a2 2 0 002 2h12a2 2 0 002-2V9zM4 13a1 1 0 011-1h1a1 1 0 110 2H5a1 1 0 01-1-1zm5-1a1 1 0 100 2h1a1 1 0 100-2H9z"
-            ></path>
-          </svg>
-          <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
-            Wallet
-          </span> 
-        </button> */}
+            {userLogged?.isAdm ? (
+              <>
+                <button
+                  type="button"
+                  className="inline-flex flex-col items-center justify-center px-5 hover:bg-gray-50 dark:hover:bg-gray-800 group border-l border-slate-600 hover:bg-gray-200 dark:hover:bg-gray-800 group dark:border-slate-600"
+                >
+                  <Link
+                    href={'/admin'}
+                    className="inline-flex flex-col items-center justify-center text-center"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                      className="w-6 h-6"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M4.5 3.75a3 3 0 00-3 3v10.5a3 3 0 003 3h15a3 3 0 003-3V6.75a3 3 0 00-3-3h-15zm4.125 3a2.25 2.25 0 100 4.5 2.25 2.25 0 000-4.5zm-3.873 8.703a4.126 4.126 0 017.746 0 .75.75 0 01-.351.92 7.47 7.47 0 01-3.522.877 7.47 7.47 0 01-3.522-.877.75.75 0 01-.351-.92zM15 8.25a.75.75 0 000 1.5h3.75a.75.75 0 000-1.5H15zM14.25 12a.75.75 0 01.75-.75h3.75a.75.75 0 010 1.5H15a.75.75 0 01-.75-.75zm.75 2.25a.75.75 0 000 1.5h3.75a.75.75 0 000-1.5H15z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+
+                    <span className="text-sm text-gray-500 dark:text-gray-400 group-hover:text-blue-600 dark:group-hover:text-blue-500">
+                      ADM
+                    </span>
+                  </Link>
+                </button>
+              </>
+            ) : null}
           </div>
         </div>
       ) : null}
