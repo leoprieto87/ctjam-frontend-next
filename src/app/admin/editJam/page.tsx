@@ -1,0 +1,55 @@
+'use client'
+import { useEffect, useState } from 'react'
+import api from '../../../contexts/_api'
+import { LoadingModal } from '../../../components/loading/LoadingModal'
+import {
+  CardEditJams,
+  JamDataType,
+} from '../../../components/cardsJams/CardEditJams'
+
+export default function Jams() {
+  const [jams, setJams] = useState<JamDataType[]>([]) // Ajuste da tipagem para um array de JamDataType
+  const [isLoading, setLoading] = useState(false)
+
+  const getJams = async () => {
+    setLoading(true)
+    try {
+      const response = await api.get('/jams')
+      setJams(response.data)
+      setLoading(false)
+    } catch (error) {
+      console.error('Erro ao buscar os dados:', error)
+    }
+  }
+
+  useEffect(() => {
+    getJams()
+  }, [])
+
+  return (
+    <main className="flex min-h-full flex-col items-center text-center justify-start p-4">
+      <h2 className="text-2xl">Escolha qual Jam você quer editar</h2>
+      <ul className="pt-4 flex-col">
+        {jams.map(
+          (
+            jamData, // Removido o uso do index como chave e corrigido o map
+          ) => (
+            <li key={jamData._id} className="mb-4">
+              <CardEditJams
+                _id={jamData._id}
+                data={jamData.data}
+                name={jamData.name}
+                description={jamData.description}
+                image={jamData.image}
+                isActive={jamData.isActive}
+                playList={jamData.playList}
+                step={''}
+              />
+            </li>
+          ),
+        )}
+      </ul>
+      {isLoading && <LoadingModal />}
+    </main>
+  )
+}

@@ -32,6 +32,12 @@ export default function Admin() {
           >
             <ButtonDefault text={'Criar nova jam'} />
           </Link>
+          <Link
+            href={'/admin/editJam'}
+            className="inline-flex flex-col items-center justify-center text-center"
+          >
+            <ButtonDefault text={'Editar uma Jam'} />
+          </Link>
         </>
       ) : (
         <>

@@ -75,6 +75,19 @@ export default function Admin() {
         >
           <div className="relative z-0 w-full mb-6 group">
             <input
+              type="text"
+              name="id_spotify"
+              id="floating_name"
+              className={inputClass}
+              placeholder=" "
+              required
+            />
+            <label htmlFor="floating_name" className={labelClass}>
+              ID do spotify
+            </label>
+          </div>
+          <div className="relative z-0 w-full mb-6 group">
+            <input
               {...register('name')}
               type="text"
               name="name"
